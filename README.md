@@ -1,4 +1,12 @@
 # [multi-it] AI 엔지니어 취업캠프(Python) 2
+## N계명
+1. list, tuple => 복수형 
+2. 변수에 담긴 값/함수가 return 하는 값이 True/False 일 경우 => is_ 로 시작한다 
+3. 함수명은 가능하면 동사형 
+4. 최대한 explicit(명쾌) 하게 <=> implicit(함축)
+5. PEP8 최대한 준수 
+6. 주석 열심히 달기
+
 
 ## github 사용법
 

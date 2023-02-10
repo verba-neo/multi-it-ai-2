@@ -1,7 +1,9 @@
 def solution(id_list, report, k):
     answer = [0 for _ in range(len(id_list))]
+
     # 신고 횟수
     report_count = {}
+
     # 신고 내역
     history = {}
     # 초기 데이터 세팅
@@ -14,7 +16,7 @@ def solution(id_list, report, k):
         from_user, to_user = from_to.split()
         # 중복 신고 여부
         if to_user not in history[from_user]:
-            # 신고내역에 추가
+            # 신고 내역에 추가
             history[from_user].append(to_user)
             # 누적 신고 횟수 +1
             report_count[to_user] += 1
@@ -44,3 +46,6 @@ print(
 print(
     solution(["con", "ryan"], ["ryan con", "ryan con", "ryan con", "ryan con"], 3)
 )
+
+
+
