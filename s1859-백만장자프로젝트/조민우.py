@@ -12,4 +12,4 @@ for tc in range(1, T+1):
             sell_price += last_day - numbers[i]
         else:
             last_day = numbers[i]
-print(f'#{tc} {sell_price}')
+    print(f'#{tc} {sell_price}')
