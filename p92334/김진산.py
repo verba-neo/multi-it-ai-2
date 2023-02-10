@@ -1,18 +1,20 @@
 def solution(id_list, report, k):
-    answer = [0 i for i in range(len(id_list))]
-    # 신고횟수
-    report_count = {}
-    # 신고내역
-    report_history = {}
-    # 각각 딕셔너리에 키값 하고 값 넣기
-    for user_id in id_list:
-        report_count[user_id] = 0
-        report_history[user_id] = []
+    answer = [0] * len(id_list)
+    report_count = [0] * len(id_list)
+    dict = {}
 
-    # 신고 내역 추가/ 신고 횟수 누적
-    for report_process in report:
-        post_user, receive_user = report_process.split()
+    for i in id_list:
 
+    # 신고를 먼저 분류
+    for i in report:
+        post_user, receive_user = i.split(" ")
+        if receive_user not in dict[post_user]:
+            print(receive_user)
+    # 중복 여부 확인
+
+    # 신고 횟수 확인
+
+    # 신고 보낸사람 횟수 확인
     return answer
 
 print(solution(["muzi", "frodo", "apeach", "neo"],
