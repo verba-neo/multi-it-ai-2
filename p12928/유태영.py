@@ -2,7 +2,7 @@
 # 2. 자기 브랜치에서 자기 이름 으로 파일 만들기
 # 3. 문제 풀기
 # 4. 푼 코드 add => commit
-
+# 5. git push origin <브랜치이름>
 def solution(n):
     answer = 0
     # 1 ~ n 까지 모두 순회하며
