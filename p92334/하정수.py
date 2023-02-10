@@ -1,21 +1,25 @@
 def solution(id_list, report, k):
+    banned = []
     answer = []
-    for i in id_list:
-        answer.append(0)
     for idc in id_list:
         rep_set = set(report)
         count = 0
         for i in rep_set:
-            if idc == i.split()[1]:
+            i = i.split()
+            if (idc == i[1]):
                 count += 1
-        if count >= k:
-            for sent in range(len(id_list)):
-                for re in rep_set:
-                    re = re.split()
-                    if idc == re[1]:
-                        if id_list[sent] == re[0]:
-                            answer[sent] += 1
-            pass
+        if (count >= k):
+            banned.append(idc)
+
+    for idc in id_list:
+        re = 0
+        for ban in banned:
+            for i in rep_set:
+                i = i.split()
+                if (i[1] == ban):
+                    if (i[0] == idc):
+                        re += 1
+        answer.append(re)
     return answer
 
 # def solution(id_list, report, k):
