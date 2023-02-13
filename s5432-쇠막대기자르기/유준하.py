@@ -1,3 +1,8 @@
+import sys
+
+sys.stdin = open('input.txt')
+
+
 testcase = int(input())
 for i in range(1, testcase+1):
     arrange = input()
@@ -13,6 +18,7 @@ for i in range(1, testcase+1):
         else:
             razer.append(sum(pipe))     # 레이저 이면 pipe의 갯수 저장
     print(f"#{i} {result+sum(razer)}")
+    print(result)
 
 
 # 닫힌 괄호의 수 + 레이저의 수 = 절단된 쇠파이프의 갯수
