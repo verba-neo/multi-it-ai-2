@@ -77,7 +77,7 @@ for test_case in range(1, T + 1):
 #       if cnt_col == K:
 #          word += 1
 #
-#    print(f"#{test_case} {word}")
+#    print(f"#{test_case} {word}")####
 
 
 
