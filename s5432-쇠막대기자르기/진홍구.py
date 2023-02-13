@@ -18,4 +18,4 @@ for test_case in range(1, T+1):
             if n[i] == ')' and n[i-1] == ')':
                 poll_count -= 1
                 poll_cut += 1
-    print("#", test_case, " ", poll_cut)
+    print("#{} {}".format(test_case, poll_cut))
