@@ -9,7 +9,6 @@ for test_case in range(1, T+1):
     poll_count = 0
     poll_cut = 0
     for i in range(len(n)):
-        temp += 1
         if n[i] == '(':
             poll_count += 1
         if i >= 1:
