@@ -1,6 +1,8 @@
 def solution(id_list, report, k):
     dict_num = {}
+    #id ,아이디가 신고당한 횟수
     dict_string_list = {}
+    # id , 신고한 id string list
     reportuniq = set(report)
     banuser = []
     mail = []
