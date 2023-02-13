@@ -1,5 +1,5 @@
 import sys
-sys.stdin = open('input.txt')
+sys.stdin = open('input.txt') # 'input.txt' 파일 열기
 
 T = int(input()) # 'input.txt'에서 test_case 갯수를 input으로 받음
 for test_case in range(1, T+1): # test_case 갯수 만큼 for문 돌림
