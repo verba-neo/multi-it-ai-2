@@ -15,7 +15,6 @@ for T in range(T):
     for r in range(row):
         word_long = 0
         for c in range(row):
-
             if c == row - 1:
                 if graph[r][c] == 1:
                     word_long+=1
