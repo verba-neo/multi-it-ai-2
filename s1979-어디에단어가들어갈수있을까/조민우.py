@@ -6,7 +6,7 @@ for test_case in range(1, T + 1):
    N, K = map(int, input().split())
    # N * N 행렬
    puzzle = [list(map(int, input().split())) for i in range(N)]
-   word = 0
+   word1 = 0
 
    # row 찾기
 
@@ -21,10 +21,10 @@ for test_case in range(1, T + 1):
             continuous += 1
             if j == N - 1:
                if continuous == K:
-                  word += 1
+                  word1 += 1
          elif puzzle[i][j] == 0:
                if continuous == K:
-                  word += 1
+                  word1 += 1
                continuous = 0
 
          # col 찾기
@@ -32,16 +32,16 @@ for test_case in range(1, T + 1):
             col_continuous += 1
             if j == N - 1:
                if col_continuous == K:
-                  word += 1
+                  word1 += 1
          elif puzzle_col[i][j] == 0:
             if col_continuous == K:
-               word += 1
+               word1 += 1
             col_continuous = 0
 
 
 
 
-   print(f't#{test_case} {word}')
+   print(f't#{test_case} {word1}')
 
 # import sys
 # sys.stdin = open("input.txt", "r")
@@ -77,7 +77,7 @@ for test_case in range(1, T + 1):
 #       if cnt_col == K:
 #          word += 1
 #
-#    print(f"#{test_case} {word}")####
+#    print(f"#{test_case} {word}")
 
 
 
