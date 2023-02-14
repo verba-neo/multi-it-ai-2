@@ -20,6 +20,21 @@ gems = ["DIA", "RUBY", "RUBY", "DIA", "DIA", "EMERALD", "SAPPHIRE", "DIA"]
 #         break
 # print(answer)
 
+# O(n^2)
+# def solution(gems):
+#     N = minimum = len(gems)
+#     uniq_count = len(set(gems))
+#     answer = [1, N]
+#     for start in range(0, N-uniq_count+1):
+#         for end in range(start+uniq_count, N+1):
+#             my_gems = gems[start:end]
+#             if len(set(my_gems)) == uniq_count and len(my_gems) < minimum:
+#                 minimum = len(my_gems)
+#                 answer[0] = start + 1
+#                 answer[1] = end
+#                 break
+#     return answer
+
 start = 0
 N = minimum = len(gems)
 uniq_count = len(set(gems))
