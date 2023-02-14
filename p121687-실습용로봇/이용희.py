@@ -26,6 +26,7 @@ for c in command:
             y += 1
         else:
             x += 1
+    print(x, y)
 answer.append(x)
 answer.append(y)
 
