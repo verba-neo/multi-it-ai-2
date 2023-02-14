@@ -1,4 +1,4 @@
-command = "GRGLGRG"
+command = "GRGRGRB"
 x = 0
 y = 0
 head = 0
