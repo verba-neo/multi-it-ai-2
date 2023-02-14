@@ -33,6 +33,5 @@ def solution(command):
 
 
 
-
 print(solution('GRGLGRG'))
 print(solution( "GRGRGRB" ))
