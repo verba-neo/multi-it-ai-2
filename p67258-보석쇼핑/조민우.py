@@ -8,32 +8,15 @@ def solution(gems):
     j = len(shelf)
     k = 0
     while i < j:
-        if len(set(shelf[i:]) & gems_set) == 4:
-                i += 1
-        else:
-            if i == 0:
-                answer.append(i+1)
-                break
-            elif i != 0:
-                answer.append(i)
-                break
+        if len(set(shelf[i:]) & gems_set) == len(gems_set):
+            print(set(shelf[i:]) & gems_set)
+            k = i
 
-    while j > i-1:
-        if len(set(shelf[i-1:j]) & gems_set) == len(gems_set):
-            j -= 1
+
         else:
+            answer.append(k+1)
             break
-    if len(gems_set) == 1:
-        print(shelf[i - 1:j])
-        answer.append(i+1)
-    elif len(shelf[i-1:j]) >= len(gems_set):
-
-        answer.append(len(shelf[i-1:j]))
-        print(shelf[i-1:j])
-    else:
-        print(shelf[i - 1:j])
-        answer.append(j+1)
-
+        i += 1
     return answer
 
 
