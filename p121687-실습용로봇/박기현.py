@@ -1,6 +1,11 @@
 def solution(command):
     answer = [0, 0]
-    dire = [[0, 1], [1, 0], [0, -1], [-1, 0]]
+    dire = [
+        0[0, 1],
+        1[1, 0],
+        2[0, -1],
+        3[-1, 0]
+    ]
     state = 0
     for order in command:
         state %= 4
