@@ -40,7 +40,7 @@ for test_case in range(T):
 
     now_loc = [0,0]
     flag = 0
-    print(f'#{test_case}')
+    print(f'#{test_case+1}')
     for r in range(N) :
         print(*graph[r])
 
