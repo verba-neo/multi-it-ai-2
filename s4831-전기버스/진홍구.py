@@ -20,11 +20,11 @@ for test_case in range(1, T + 1):
         charge_count = 0
         # charge_count 저장값
         for _ in range(bus[-1] + k, bus[-1], -1):
-            if (next_bus in charge_location) and charge_count == 0:
+            if next_bus in charge_location and charge_count == 0:
                 bus.append(next_bus)
                 charge_count = 1
                 #충전
-            if next_bus not in charge_location:
+            elif next_bus not in charge_location:
                 next_bus -= 1
                 #next_bus  값 감소시킴
             if _ == bus[-1] + 1 :
