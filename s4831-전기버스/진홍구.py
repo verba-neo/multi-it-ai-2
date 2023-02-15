@@ -18,12 +18,15 @@ for test_case in range(1, T + 1):
         next_bus = bus[-1] + k
         # charge_count는 충전기위치를 1번만 하기 위한 변수
         charge_count = 0
+        # charge_count 저장값
         for _ in range(bus[-1] + k, bus[-1], -1):
             if next_bus in charge_location and charge_count == 0:
                 bus.append(next_bus)
                 charge_count = 1
+                #충전
             elif next_bus not in charge_location:
                 next_bus -= 1
+                #next_bus  값 감소시킴
             if _ == bus[-1] + 1 :
                 next_bus = n
                 bus = [0]
