@@ -18,8 +18,11 @@ for test_case in range(1, T+1):
     card_num_list = list(map(int, card_num))
     card_num_list.sort()
 
+    # unique_card
+    unique_card = set(card_num_list)
+
     # 각 카드가 몇 장인지 센다.
-    for i in range(10):
+    for i in unique_card:
         for num in card_num_list:
             # 카드를 발견하면 card_count에 1을 더한다.
             if i == num:
