@@ -22,7 +22,8 @@ for test_case in range(1, T+1):
                 # 좌표 리스트에서 Y의 최소값에서 최대값 + 1 까지 반복
                 for y in range(coordinate[1], coordinate[3] + 1):
                     # X, Y 값을 레드 리스트에 저장
-                    red_list.append([x, y])
+                    if not red_list.count([x, y]):
+                        red_list.append([x, y])
         # 색깔이 블루(2)일 경우
         else:
             # 좌표 리스트에서 X의 최소값에서 최대값 + 1 까지 반복
@@ -30,16 +31,13 @@ for test_case in range(1, T+1):
                 # 좌표 리스트에서 Y의 최소값에서 최대값 + 1 까지 반복
                 for y in range(coordinate[1], coordinate[3] + 1):
                     # X, Y 값을 블루 리스트에 저장
-                    blue_list.append([x, y])
+                    if not blue_list.count([x, y]):
+                        blue_list.append([x, y])
 
     # 레드 리스트와 블루 리스트를 탐색하여 같은 좌표가 있을 경우 result에 1씩 더한다.
     for red in red_list:
-        # 중복되는 값이 있는지 체크하기 위해
-        value_check = 0
         for blue in blue_list:
-            if red == blue and value_check == 0:
+            if red == blue:
                 result += 1
-                # 레드 리스트 값과 블루 리스트 값이 같을 경우 이후에 나오는 중복값을 무시하기 위해
-                value_check = 1
     print(f'#{test_case} {result}')
 
