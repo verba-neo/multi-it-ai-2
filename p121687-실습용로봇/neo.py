@@ -19,7 +19,6 @@ def solution(command):
 
     return answer
 
-
 # [2, 2]
 print(solution('GRGLGRG'))
 

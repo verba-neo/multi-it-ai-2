@@ -1,6 +1,5 @@
 def solution(command):
     answer = []
-    command = list(command)
     x = 0
     y = 0
     z = 1
