@@ -8,11 +8,9 @@ def solution(gems):
     j = len(shelf)
     k = 0
     while i < j:
+        print(set(shelf[i:]) & gems_set)
         if len(set(shelf[i:]) & gems_set) == len(gems_set):
-            print(set(shelf[i:]) & gems_set)
             k = i
-
-
         else:
             answer.append(k+1)
             break
