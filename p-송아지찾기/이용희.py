@@ -1,12 +1,10 @@
 def solution(s, e):
     if s < e:
         count = (e - s) // 5
-        s += (count * 5)
-    else:
+        s += count * 5
+    elif s > e:
         return s - e
 
-    # 몇 번만에 찾았는지
-    count = 0
     # 목적지
     to_visits = [s]
     # 방문 여부
