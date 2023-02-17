@@ -21,9 +21,11 @@ for test_case in range(T):
 
     S, G = map(int,input().split())
 
+    #////////////////// 여기까지 문제 입력받기 ,노드와 간선들 다 받음
 
-    history_graph = []
+
     visited = [S]
+    #방문 여부
     flag = 0
     #판단
     def dfs(V,G):
@@ -32,14 +34,12 @@ for test_case in range(T):
             flag = 1
             return
 
-
         if V in graph:
             for next_v in graph[V]:
                 if next_v not in visited:
+                    #만약 방문 되어 있지 않다면
                     visited.append(next_v)
                     dfs(next_v,G)
-                    visited.pop()
-
 
     dfs(S, G)
     if flag == 1:
