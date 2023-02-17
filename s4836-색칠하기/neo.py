@@ -17,7 +17,7 @@ for tc in range(1, T+1):
             for c in range(c1, c2+1):
                 if matrix[r][c] != color:
                     matrix[r][c] += color
-
+    globals()
     # 보라색 칸(3) 검사
     for r in range(10):
         for c in range(10):
