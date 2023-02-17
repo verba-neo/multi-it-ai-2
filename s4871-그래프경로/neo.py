@@ -15,6 +15,7 @@ for tc in range(1, T+1):
         # 양방향(무향)그래프 일 경우 아래 줄 추가
         graph[end].append(start)
     S, G = map(int, input().split())
+    print("s", S , G)
     print(graph)
 
     def dfs():
