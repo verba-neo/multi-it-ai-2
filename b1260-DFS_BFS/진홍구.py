@@ -3,7 +3,8 @@ import sys
 sys.stdin = open('input.txt')
 
 
-def dfs_def(N, M, V, graph):
+def dfs_bfs_def(N, M, V, graph, k):
+    # k == 0 : bfs, k == -1 : dfs
     # 방문한 정점 초기화
     visited = [False for _ in range(N + 1)]
     # 현재 위치에 시작정점 할당
@@ -12,32 +13,15 @@ def dfs_def(N, M, V, graph):
     visite_order = []
     to_visits = [current]
     while to_visits:
-        current = to_visits.pop()
+        current = to_visits.pop(k)
         if visited[current]:
             pass
         elif not visited[current]:
             visited[current] = True
-            graph[current].sort(reverse=True)
-            to_visits += graph[current]
-            visite_order.append(current)
-    return visite_order
-
-
-def bfs_def(N, M, V, graph):
-    # 방문한 정점 초기화
-    visited = [False for _ in range(N + 1)]
-    # 현재 위치에 시작정점 할당
-    current = V
-    # 방문한 정점 초기화
-    visite_order = []
-    to_visits = [current]
-    while to_visits:
-        current = to_visits.pop(0)
-        if visited[current]:
-            pass
-        elif not visited[current]:
-            visited[current] = True
-            graph[current].sort()
+            if k == -1:
+                graph[current].sort(reverse=True)
+            else:
+                graph[current].sort()
             to_visits += graph[current]
             visite_order.append(current)
     return visite_order
@@ -57,5 +41,44 @@ for test_case in range(1, T + 1):
         graph_dfs[end].append(start)
     graph_bfs = graph_dfs.copy()
 
-    print(*dfs_def(N, M, V, graph_dfs))
-    print(*bfs_def(N, M, V, graph_bfs))
+    print(*dfs_bfs_def(N, M, V, graph_dfs, -1))
+    print(*dfs_bfs_def(N, M, V, graph_bfs, 0))
+
+# def dfs_def(N, M, V, graph):
+#     # 방문한 정점 초기화
+#     visited = [False for _ in range(N + 1)]
+#     # 현재 위치에 시작정점 할당
+#     current = V
+#     # 방문한 정점 초기화
+#     visite_order = []
+#     to_visits = [current]
+#     while to_visits:
+#         current = to_visits.pop()
+#         if visited[current]:
+#             pass
+#         elif not visited[current]:
+#             visited[current] = True
+#             graph[current].sort(reverse=True)
+#             to_visits += graph[current]
+#             visite_order.append(current)
+#     return visite_order
+
+
+# def bfs_def(N, M, V, graph):
+#     # 방문한 정점 초기화
+#     visited = [False for _ in range(N + 1)]
+#     # 현재 위치에 시작정점 할당
+#     current = V
+#     # 방문한 정점 초기화
+#     visite_order = []
+#     to_visits = [current]
+#     while to_visits:
+#         current = to_visits.pop(0)
+#         if visited[current]:
+#             pass
+#         elif not visited[current]:
+#             visited[current] = True
+#             graph[current].sort()
+#             to_visits += graph[current]
+#             visite_order.append(current)
+#     return visite_order
