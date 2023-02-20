@@ -186,3 +186,5 @@ cmake-build-*/
 # IntelliJ
 out/
 .idea/
+
+answer.py
