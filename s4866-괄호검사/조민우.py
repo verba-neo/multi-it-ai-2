@@ -1,6 +1,7 @@
 import sys
 
 sys.stdin = open('input.txt')
+T = int(input())
 # T = int(input())
 # for test_case in range(1, T + 1):
 #     txt = input()
@@ -23,7 +24,7 @@ sys.stdin = open('input.txt')
 
 
 # 10 개중 8 개
-T = int(input())
+
 for test_case in range(1, T + 1):
     txt = input()
     check_list =[0]
