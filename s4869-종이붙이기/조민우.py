@@ -3,7 +3,37 @@ sys.stdin = open("input.txt", "r")
 
 T = int(input())
 
-answer_list = []
+def make_square(n):
+    if n == 1:
+        return 1
+    elif n == 2:
+        return 3
+    # Dynamic Programing => DP
+    return make_square(n-1) + 2 * make_square(n-2)
+def make_square2(n):
+    if n <= 1:
+        return answers[n]
+
+    for i in range(2, n+1):
+        x = answers[i - 2]
+        y = 2 * answers[i - 1]
+        answers.append(x + y)
+
+    return answers[n]
+for test_case in range(1, T + 1):
+    N = int(input()) // 10
+
+    print(f'#{test_case} {make_square(N)}')
+
+# def fibo(n):
+#     answer = [0,1]
+#     if n <= 1:
+#         return n
+#     for i in range(2, n+1):
+#         x = answer[i-2]
+#         y = answer[i-1]
+#         answer.append(x+y)
+#     return answer(n)
 
 # def nCr(n, ans, r):
 #     if n == len(nums):

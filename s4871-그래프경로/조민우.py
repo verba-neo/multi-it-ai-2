@@ -15,6 +15,12 @@ for tc in range(1, T+1):
         # 양방향(무향)그래프 일 경우 아래 줄 추가
         # graph[end].append(start)
     S, G = map(int, input().split())
+
+
+    def dfs_r(V):
+        visited[V] = True
+
+
     def dfs():
         # S => G 로 갈 수 있는가?
         # DFS
