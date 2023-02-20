@@ -13,42 +13,49 @@ for _ in range(T):
 	#추출한 리스트의 길이 1/2
 	length = int(len(el) / 2)
 	i = 0
+	#비교를 위한 리스트
+	el_2 = el
 
 	# 추출된 리스트 길이의 1/2 만큼 반복
 	for _ in range(length):
-		# 1쌍의 괄호가 삭제 될때까지 반복
+		# 1쌍의 괄호가 삭제 or 모두 검사후 삭제 될것이 없으면 루프 종료
 		while True:
-			if el[i] == '(':
-				if el[i+1] == ')':
-					del el[i]
-					del el[i]
+			if el_2[i] == '(':
+				if el_2[i+1] == ')':
+					del el_2[i]
+					del el_2[i]
 					i = 0
 					break
 				else:
 					i += 1
-			elif el[i] == '[':
-				if el[i+1] == ']':
-					del el[i]
-					del el[i]
+			elif el_2[i] == '[':
+				if el_2[i+1] == ']':
+					del el_2[i]
+					del el_2[i]
 					i = 0
 					break
 				else:
 					i += 1
 			elif el[i] == '{':
 				if el[i+1] == '}':
-					del el[i]
-					del el[i]
+					del el_2[i]
+					del el_2[i]
 					i = 0
 					break
 				else:
 					i += 1
 			else:
 				i += 1
+				# 삭제될 것이 없으면 검사 종료
+				if el_2 == el:
+					break
+
+
 		# 삭제후 리스트 원소가 0개 or 1개일 경우 검사 종료
 		if len(el) == 0 or len(el) == 1:
 			break
 
-	# 원소가 0개면 올바른 값 , 1개면 올바르지 않은 값
+	# 원소가 0개면 올바른 값 , 0이 아니면 올바르지 않은 값
 	if len(el) == 0:
 		print('1')
 	else:
