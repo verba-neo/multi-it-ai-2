@@ -2,18 +2,26 @@ def solution(input_string):
 
     check = []
     list = []
-    check_str = 'r'
+    check_str = [0]
     if len(input_string) != len(set(input_string)):
         for txt in input_string:
             if check and txt == check[-1]:
-                check_str = check.pop()
-                list.append(check_str)
-            else:
-                if check_str != txt:
-                    check.append(txt)
+                check_str.append(check.pop())
+
+            elif check_str[-1] != txt:
+                check.append(txt)
+
+
+        for i in set(check_str):
+            if check_str.count(i) >= 2:
+                check.append(i)
+
         result = ""
-        for string in set(check):
+
+        for string in sorted(set(check)):
+
             result += string
+
         return result
     else:
         return 'N'
@@ -24,3 +32,4 @@ def solution(input_string):
 print(solution("edeaaabbccd"))
 print(solution("eeddee"))
 print(solution('string'))
+print(solution('zbzbz'))
