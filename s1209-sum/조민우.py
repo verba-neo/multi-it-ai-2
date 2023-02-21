@@ -1,8 +1,10 @@
 import sys
 sys.stdin = open('input.txt')
 
-T = int(input())
 
+for test_case in range(1, 11):
+    T = int(input())
+    # ///////////////////////////////////////////////////////////////////////////////////
     array = []
     for i in range(100) :
         array.append(list(map(int, input().split())))
