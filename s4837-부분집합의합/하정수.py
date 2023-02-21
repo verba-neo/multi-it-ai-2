@@ -3,34 +3,30 @@ sys.stdin = open('input.txt')
 
 
 def dfs(idx):
+    global count
     # 현재 idx 가 numbers의 길이와 같다 => 끝까지 갔다
     if idx == len(numbers):
-        print(subset)
-        print(visited)
+        if len(subset) == N and sum(subset) == K:
+            count += 1
         return
 
     subset.append(numbers[idx])
-    visited[idx] = True
-
     dfs(idx+1)
-
     subset.pop()
-    visited[idx] = False
-
     dfs(idx+1)
 
 
-N, K = 3, 8
-numbers = [1, 2, 3]
+numbers = [i for i in range(1, 13)]
 
 # 부분집합 / 포함 여부 둘 중에 하나만 있어도 됨
 # 부분 집합
-subset = []
-# 포함 여부
-visited = [False] * 3
 
-count = 0
-dfs(0)
-print(count)
+T = int(input())
+for test_case in range(1, T + 1):
+    N, K = map(int, input().split())
+    subset = []
+    count = 0
+    dfs(0)
+    print(f'#{test_case} {count}')
 
 
