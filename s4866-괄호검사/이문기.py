@@ -15,9 +15,9 @@ for t in range(T):
 	i = 0
 	el_2 = el.copy()
 
-	# 추출된 리스트 길이의 1/2 만큼 반복
 	while True:
 		# 1쌍의 괄호가 삭제 or 모두 검사후 삭제 될것이 없으면 루프 종료
+		el_3 = el_2.copy()
 		while True:
 			if el_2[i] == '(':
 				if el_2[i+1] == ')':
@@ -50,7 +50,7 @@ for t in range(T):
 				else:
 					i += 1
 		# 1쌍도 삭제 되지 않는 다면 검사 종료
-		if el_2 == el:
+		if el_3 == el_2:
 			break
 		# 삭제후 원소가 0개 혹은 1개 일때 검사 종료
 		elif len(el_2) == 0 or len(el_2) == 1:
