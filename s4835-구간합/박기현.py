@@ -7,12 +7,11 @@ for test_case in range(1, T + 1):
     v = list(map(int, input().split()))
     sum_lst = []
 
-
-    for left in range(N):
+    for left in range(N-M+1):
         right = left + M
         if right <= N:
             sum_lst.append(sum(v[left:right]))
 
+    result = max(sum_lst)-min(sum_lst)
 
-    result = max(sum_lst) - min(sum_lst)
     print(f'#{test_case} {result}')
