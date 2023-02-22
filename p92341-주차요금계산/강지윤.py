@@ -2,16 +2,12 @@ import math
 
 def solution(fees, records):
     #누적 주차 시간 구해봅시다
-
-    in_car = []
+    #dict로 데이터 가공
     car_record= []
     for record in records:
         time, car_number, in_out = record.split()
         car_record.append(car_number)
-        # Time, Minute = map(int,time.split(':'))
-        # time = Time*60 + Minute
-        # new_record[car_number] = [time, in_out]
-        #
+
     new_record = {number:[] for number in car_record}
     total_time = {number:0 for number in car_record}
 
@@ -24,6 +20,7 @@ def solution(fees, records):
 
     # print(new_record)
 
+    #각 차별로 돈 계산 스택 이용
     for k in new_record.keys():
         stack = []
         for record in new_record[k]:
