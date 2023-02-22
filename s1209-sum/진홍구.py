@@ -1,6 +1,6 @@
 import sys
 sys.stdin = open('input.txt')
-for _ in range(1, 11):
+for _ in range(10):
     test_case = int(input())
     sum_matrix = []
     sum_max = 0
