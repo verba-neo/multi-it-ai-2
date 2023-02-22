@@ -1,30 +1,31 @@
 def solution(input_string):
     answer =''
     count =1
-    dict = {}
-    dict[input_string[0]] = []
+    check_dict = {}
+
+    check_dict[input_string[0]] = []
     check = [input_string[0]]
     for txt in input_string:
         if txt not in check[-1]:
             check.append(txt)
-            dict[txt] = []
-    print(dict)
+            check_dict[txt] = []
+    print(check)
 
     for txt in check:
-        dict[txt].append(count)
-    for key in dict.keys():
-        if len(dict[key]) >= 2:
+        check_dict[txt].append(count)
+    for key in check_dict.keys():
+        if len(check_dict[key]) >= 2:
             answer += key
-
+    print(check_dict)
     answer = "".join(sorted(answer))
     if answer:
         return answer
     else:
         return "N"
 
-    print(check)
-    print(dict)
 
+
+# def solution(input_string):
     # check = []
     # list = []
     # check_str = [0]
