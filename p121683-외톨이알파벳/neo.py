@@ -11,7 +11,7 @@ def solution(input_string):
         if current == last:
             continue
         else:
-            # 기존에 등장한 적 있음 => 두번째 이상 등장 and 아직 답에는 없음 => 답에 추가
+            # 기존에 등장한 적 있음(두번째 이상 등장) and 아직 답에는 없음 => 답에 추가
             if current in appears and current not in answer:
                 answer += current
             # appears 에 없다면 답에는 당연히 존재할 수 없음 (외톨이의 조건이 2번이상 등장이기 때문)

@@ -9,7 +9,7 @@ def solution(input_string):
     for string in input_string:
         string_dic[string].append(string_num)  # 입력 받은 문자의 인덱스 값을 배열로 추가
         string_num += 1
-    print(string_dic)
+
     string_set = 0
     for string_key in string_dic:  # 입력 받은 문자의 키값으로 순환
         for string_value in range(len(string_dic[string_key])):  # 각 키의 벨류값을 순환
