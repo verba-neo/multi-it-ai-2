@@ -1,8 +1,9 @@
 
 def solution(numbers, target):
     count = 0
-
-    def dfs(Sum,index):
+    #count : target의 갯수
+    #target : 탈출 조건
+    def dfs(Sum, index):
         nonlocal count
         nonlocal target
         #인덱스를 증가시키면서 더해나간다
