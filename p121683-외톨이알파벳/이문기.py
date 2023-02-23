@@ -19,5 +19,6 @@ def solution(input_string):
 		answer = ''.join(str(x) for x in answer)
 	return answer
 
-x = 'zbzbz'
+x = 'zbzbzasdasddd11zz33214'
 print(solution(x))
+
