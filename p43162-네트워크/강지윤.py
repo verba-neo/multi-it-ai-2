@@ -3,7 +3,6 @@ def solution(n, computers):
     visited = [False for _ in range(n)]
     count = 0
     # 영역별로 숫자를 주기 위해
-    Node_check = [False for _ in range(n)]
     def dfs(node):
         connected[node] = count
 
@@ -28,6 +27,5 @@ def solution(n, computers):
     return(len(unique_connected))
 
 
-# print(solution(3, [[1, 1, 0], [1, 1, 0], [0, 0, 1]]))
-
 print(solution(3, [[1, 1, 0], [1, 1, 0], [0, 0, 1]]))
+
