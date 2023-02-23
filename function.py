@@ -16,3 +16,13 @@ def get_balance(user):
 
 users.sort(key=get_age)
 users.sort(key=lambda user: user['balance'])
+
+
+def a():
+    def b():
+        return 'b in a'
+
+
+b = a()
+print(b())
+print(a()())
