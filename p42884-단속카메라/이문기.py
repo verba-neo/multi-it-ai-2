@@ -1,6 +1,6 @@
-def camera(routes):
+def solution(routes):
 	car_list = routes[:]
-	answer  = 0
+	answer = 0
 	while True:
 
 		x = []
@@ -28,4 +28,4 @@ def camera(routes):
 	return answer
 
 y = [[-20,-15], [-14,-5], [-18,-13], [-5,-3]]
-print(camera(y))
+print(solution(y))
