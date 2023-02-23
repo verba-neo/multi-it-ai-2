@@ -15,4 +15,4 @@ for test_case in range(1, T + 1):
             answer += 1
             last = e
 
-    print(f'#{test_case + 1}', answer)
+    print(f'#{test_case}', answer)
