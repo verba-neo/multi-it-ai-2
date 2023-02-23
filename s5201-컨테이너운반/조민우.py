@@ -21,20 +21,17 @@ for test_case in range(1, T+1):
     # 현재 사용되는 트럭의 용량
     truck_cnt = 0
     # 운반되는 화물의 무게
-    total_weight = []
+
     for truck in capacity:
         for weight in container:
-
             if truck >= weight:
-                container.remove(weight)
-                total_weight.append(weight)
                 truck_cnt += weight
                 truck -= weight
+                container.remove(weight)
+                break
 
-    if weight:
-        print(f'#{test_case} {truck_cnt}')
-    else:
-        print(f'#{test_case} {0}')
+    print(f'#{test_case} {truck_cnt}')
+
 
 
 
