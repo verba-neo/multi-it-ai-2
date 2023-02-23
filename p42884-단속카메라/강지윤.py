@@ -15,6 +15,4 @@ def solution(routes):
     return camera_count
 
 
-
-
 print(solution([[-20,-15], [-14,-5], [-18,-13], [-5,-3]]))
