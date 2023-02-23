@@ -1,18 +1,20 @@
 import sys
 sys.stdin = open('input.txt')
 
-for tc in range(int(input())):
-    # 신청서 수
+T = int(input())
+for tc in range(1, T+1):
     N = int(input())
-    # 스케쥴 내용
     schedules = [list(map(int, input().split())) for _ in range(N)]
-    schedules.sort(key=lambda x: (x[1], x[0]))
-
-    answer = 0
+    schedules.sort(key=lambda x: x[1])
+    # 마지막 작업이 끝나는 시간
     last = 0
-    for s, e in schedules:
-        if s >= last:
-            answer += 1
-            last = e
+    # 총 할 수 있는 일의 개수
+    count = 0
 
-    print(f'#{tc+1}', answer)
+    for start, end in schedules:
+        # 새로 시작하는 일이 마지막 일보다 같거나 늦게 끝난다면,
+        if start >= last:
+            last = end
+            count += 1
+
+    print(f'#{tc} {count}')
