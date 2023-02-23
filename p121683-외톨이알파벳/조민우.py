@@ -13,11 +13,10 @@ def solution(input_string):
 
     for txt in check:
         check_dict[txt].append(count)
-    for key in check_dict.keys():
-        if len(check_dict[key]) >= 2:
-            answer += key
+        if len(check_dict[txt]) >= 2:
+            answer += txt
     print(check_dict)
-    answer = "".join(sorted(answer))
+    answer = "".join(sorted(set(answer)))
     if answer:
         return answer
     else:
