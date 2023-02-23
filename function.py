@@ -22,6 +22,7 @@ def a():
     def b():
         return 'b in a'
 
+    return b
 
 b = a()
 print(b())
