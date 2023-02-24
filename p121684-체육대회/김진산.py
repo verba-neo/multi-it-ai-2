@@ -1,13 +1,15 @@
-from itertools import combinations, permutations
+from itertools import permutations
 def solution(ability):
     answer = 0
-    point = 0
-    for i in permutations(ability,3):
-        for j in range(3):
-            for k in range(3):
-                print(i[j][k])
-            if point < sum(i[j]):
-                point = sum(i[j])
+    sv_p = 0
+    for i in permutations(ability, len(ability[0])):
+        point = 0
+        for idx, j in enumerate(i):
+            point += j[idx]
+            if sv_p < point:
+                sv_p = point
+
+    answer = sv_p
     return answer
 
 
