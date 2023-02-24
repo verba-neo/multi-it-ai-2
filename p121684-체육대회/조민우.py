@@ -10,8 +10,8 @@ def solution(ability):
             # 새로운 값이 기존  값보다 크거나 같은 때 갱신
             if ab_sum >= total:
                 total = ab_sum
-            # 깊이 탐색 종료후 전 노드로 리턴
             return
+            # 깊이 탐색 종료후 전 노드로 리턴
         # ability의 길이를 가지고 visited에 방문여부 표시
         for i in range(len(ability)):
             if not visited[i]:
