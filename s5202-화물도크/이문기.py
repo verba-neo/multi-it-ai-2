@@ -39,7 +39,16 @@ for tc in range(int(input())):
 	print(f'#{tc+1} {result}')
 
 
-
+for tc in range(int(input())):
+    result = 1
+    car_list = [list(map(int, input().split())) for _ in range(int(input()))]
+    car_list.sort(key=lambda x: x[1])
+    end_time = car_list[0][1]
+    for idx, (start, end) in enumerate(car_list[1:], 1):
+        if start >= end_time:
+            end_time = end
+            result += 1
+    print(f'#{tc+1} {result}')
 
 
 
