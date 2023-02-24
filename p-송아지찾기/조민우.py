@@ -1,6 +1,5 @@
 from collections import deque
 def solution(s, e):
-    # 목적지가 더 뒤에 있다면, 최대한 빨리 가까이 가자
     if s < e:
         count = (e-s) // 5
         s = s + (count * 5)
