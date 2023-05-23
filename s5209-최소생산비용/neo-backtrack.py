@@ -12,11 +12,13 @@ def backtrack(product_idx, total):
     for factory_idx in range(N):
         if not visited[factory_idx]:
             visited[factory_idx] = True
+
             # new_total => 지금까지의 생산비용 + 이번 선택에 의한 생산비용
             new_total = total + matrix[product_idx][factory_idx]
             # 지금까지의 생산비용이 최소보다 작을 때만,
             if new_total < minimum:  # pruning => 가지치기
                 backtrack(product_idx+1, new_total)
+
             visited[factory_idx] = False
 
 
